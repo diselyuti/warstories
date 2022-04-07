@@ -1,0 +1,357 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/_variables';
+
+body{
+    color: $blue-700;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $yellow-300;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $blue-700;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $blue-800;
+    }
+
+    @media screen and (max-width: 500px){
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            border-radius: 0.7rem;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            border-radius: 0.7rem;
+        }
+    }
+}
+
+.btn-outline-success{
+    color: $blue-700;
+    border-color: $blue-700;
+
+    &:hover{
+        color: $blue-700;
+        background-color: $yellow-300;
+    }
+    &:focus{
+        border-color: $yellow-300;
+        box-shadow: 0 0 0 0.25rem rgb(255 218 106 / 25%);
+    }
+}
+
+.form-control{
+    color: $blue-700;
+    border-color: $blue-700;
+
+    &:focus{
+        border-color: $yellow-300;
+        box-shadow: 0 0 0 0.25rem rgb(255 218 106 / 25%);
+    }
+}
+
+.container-fluid{
+    justify-content: flex-end !important;
+    .navbar-toggler{
+        color: $blue-700 !important;
+        border-color: $blue-700 !important;
+
+        &:focus{
+            box-shadow: 0 0 0 0.25rem rgb(255 218 106 / 25%);
+        }
+    }
+    .navbar-collapse{
+        text-align: center;
+    }
+}
+
+.navbar{
+    .nav-link.active{
+        color: $blue-700 !important;
+        &:hover{
+            color: $yellow-300 !important;
+        }
+    }
+}
+
+.app-body{
+    min-height: 92vh;
+
+    .welcome-page{
+        padding: 0 50px 50px 50px;
+        height: 92vh;
+
+        .welcome{
+            width: 15%;
+
+            @media screen and (max-width: 800px){
+                width: 30%;
+            }
+            @media screen and (max-width: 450px){
+                width: 50%;
+            }
+        }
+    }
+
+    .tellstory-page{
+        height: 92vh;
+
+        form{
+            padding: 20px;
+            height: 80%;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: $yellow-300;
+                border-radius: 0.25rem;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $blue-700;
+                border-radius: 0.25rem;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: $blue-800;
+            }
+        }
+        .all-good{
+            width: 100%;
+            height: 0;
+            background-color: $green-400;
+            color: white;
+            visibility: hidden;
+            transition-duration: 0.3s;
+            &.opened{
+                bottom: 0;
+                height: 50px;
+                visibility: visible;
+            }
+        }
+        .all-bad {
+            width: 100%;
+            height: 0;
+            background-color: $red-400;
+            color: black;
+            visibility: hidden;
+            transition-duration: 0.3s;
+            &.opened {
+                bottom: 0;
+                height: 50px;
+                visibility: visible;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            form{
+                width: 95% !important;
+            }
+        }
+        @media screen and (max-width: 500px){
+
+            form{
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    border-radius: 0.7rem;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 0.7rem;
+                }
+            }
+        }
+    }
+
+    .core-page{
+        align-content: center;
+        .story-preview-container{
+            border: 1px solid $blue-700;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            margin: 15px 12px;
+            min-width: 30%;
+            &:hover{
+                border-color: $yellow-300;
+                color: $yellow-300;
+            }
+
+            h4, h5{
+                margin-bottom: 0;
+            }
+        }
+        .loading{
+            height: 92vh;
+        }
+    }
+    .showstory{
+        .story-preview-container{
+            border: 1px solid $blue-700;
+            border-radius: 0.25rem;
+            transition-duration: 0.3s;
+            margin: 15px 0;
+            min-width: 30%;
+
+            h4, h5{
+                margin-bottom: 0;
+            }
+            @media screen and (max-width: 500px) {
+                flex-direction: column !important;
+            }
+        }
+        .back{
+            margin: 15px 0;
+            width: 24%;
+        }
+    }
+    .search-page{
+        margin: 15px 12px;
+    }
+    .help-ukraine-page{
+        height: 92vh;
+        .btn{
+            width: 30%;
+        }
+        @media screen and (max-width: 500px){
+            width: 100% !important;
+            .btn{
+                width: 50%;
+            }
+        }
+    }
+    .about-page{
+        height: 92vh;
+        .about-page-main {
+            overflow-y: auto;
+            text-align: center;
+
+            .dimaska {
+                color: $yellow-300;
+                text-decoration: none !important;
+            }
+        }
+        .help-btn {
+            color: $yellow-300;
+            cursor: pointer;
+            text-align: center;
+        }
+        #help-dima-block{
+            text-align: center;
+        }
+        @media screen and (max-width: 500px) {
+            height: auto;
+        }
+    }
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates. All rights reserved.
+ *
+ * This file provided by Facebook is for non-commercial testing and evaluation
+ * purposes only. Facebook reserves all rights not expressly granted.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+.RichEditor-root {
+    background: #fff;
+    border: 1px solid $blue-700;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.RichEditor-editor {
+    border-top: 2px solid $yellow-300;
+    cursor: text;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.RichEditor-editor .public-DraftEditorPlaceholder-root,
+.RichEditor-editor .public-DraftEditor-content {
+    margin: 0 -15px -15px;
+    padding: 15px;
+}
+
+.RichEditor-editor .public-DraftEditor-content {
+    min-height: 100px;
+}
+
+.RichEditor-hidePlaceholder .public-DraftEditorPlaceholder-root {
+    display: none;
+}
+
+.RichEditor-editor .RichEditor-blockquote {
+    border-left: 5px solid #eee;
+    color: #666;
+    font-family: 'Hoefler Text', 'Georgia', serif;
+    font-style: italic;
+    margin: 16px 0;
+    padding: 10px 20px;
+}
+
+.RichEditor-editor .public-DraftStyleDefault-pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.RichEditor-controls {
+    font-size: 14px;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+.RichEditor-styleButton {
+    color: #999;
+    cursor: pointer;
+    margin-right: 16px;
+    padding: 2px 0;
+    display: inline-block;
+}
+
+.RichEditor-activeButton {
+    color: #5890ff;
+}
+
+
+
